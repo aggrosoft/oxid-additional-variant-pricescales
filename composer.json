@@ -1,0 +1,26 @@
+{
+  "name": "aggrosoft/oxid-additional-variant-pricescales",
+  "type": "oxideshop-module",
+  "description": "Add additional variant scale prices",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Kludt",
+      "homepage": "https://github.com/aggrosoft"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "extra": {
+    "oxideshop": {
+      "target-directory": "agadditionalvariantpricescales"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Aggrosoft\\AdditionalVariantPriceScales\\": "../../../source/modules/agdisablenostockvariants"
+    }
+  },
+  "version": "1.0.1"
+}
