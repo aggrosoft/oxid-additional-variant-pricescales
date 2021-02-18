@@ -46,7 +46,7 @@ class Article extends Article_parent {
 
     protected function getMatchingAdditionalVariantPriceForAmount ($varScales, $amount) {
         foreach($varScales as $sc) {
-            if ($sc['from'] >= $amount && $sc['to'] <= $amount) {
+            if ($sc['from'] <= $amount && $sc['to'] >= $amount) {
                 return $sc['price'];
             }
         }
