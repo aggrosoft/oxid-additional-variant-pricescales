@@ -1,5 +1,7 @@
 <?php
 
+namespace  Aggrosoft\AdditionalVariantPriceScales\Application\Controller;
+
 class AjaxPrice extends AjaxPrice_parent {
     protected function getAdditionalAjaxPriceData ($article, $amount) {
         $data = parent::getAdditionalAjaxPriceData($article, $amount);
