@@ -14,7 +14,8 @@ $aModule = array(
     'author'       => 'Aggrosoft GmbH',
     'extend'      => [
         \OxidEsales\Eshop\Application\Model\Article::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\Article::class,
-        \OxidEsales\Eshop\Application\Model\BasketItem::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\BasketItem::class
+        \OxidEsales\Eshop\Application\Model\BasketItem::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\BasketItem::class,
+        'ajaxprice' => \Aggrosoft\AdditionalVariantPriceScales\Application\Controller\AjaxPrice::class,
     ],
     'settings' => [
         ['group' => 'agadditionalvariantpricescales_main', 'name' => 'aAdditionalVariantPriceScales','type' => 'aarr',   'value' => ''],

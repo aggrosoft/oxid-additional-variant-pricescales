@@ -11,7 +11,18 @@ class Article extends Article_parent {
         return $price;
     }
 
-    protected function getAdditionalVariantAmountPrice ($amount) {
+    public function getAdditionalVariantPriceScales () {
+        $result = [];
+        $scales = \OxidEsales\Eshop\Core\Registry::getConfig()->getShopConfVar('aAdditionalVariantPriceScales', null, 'module:agadditionalvariantpricescales');
+        if (count($scales)) {
+            foreach($scales as $variant => $scale) {
+                $result[$variant] = $this->parseAdditionalVariantPriceScale($scale);
+            }
+        }
+        return $result;
+    }
+
+    public function getAdditionalVariantAmountPrice ($amount) {
         $addPrice = 0;
 
         if ($this->oxarticles__oxvarselect->value) {
