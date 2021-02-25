@@ -15,10 +15,14 @@ $aModule = array(
     'extend'      => [
         \OxidEsales\Eshop\Application\Model\Article::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\Article::class,
         \OxidEsales\Eshop\Application\Model\BasketItem::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\BasketItem::class,
-        'ajaxprice' => \Aggrosoft\AdditionalVariantPriceScales\Application\Controller\AjaxPrice::class,
+        \OxidEsales\Eshop\Core\ViewConfig::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Core\ViewConfig::class
     ],
     'settings' => [
         ['group' => 'agadditionalvariantpricescales_main', 'name' => 'aAdditionalVariantPriceScales','type' => 'aarr',   'value' => ''],
         ['group' => 'agadditionalvariantpricescales_main', 'name' => 'aAdditionalVariantHandlingFees','type' => 'aarr',   'value' => ''],
-    ]
+        ['group' => 'agadditionalvariantpricescales_main', 'name' => 'aExcludeSetupFees','type' => 'arr',   'value' => '']
+    ],
+    'events'       => array(
+        'onActivate'   => '\Aggrosoft\AdditionalVariantPriceScales\Application\Core\Events::onActivate'
+    ),
 );

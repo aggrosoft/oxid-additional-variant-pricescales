@@ -8,6 +8,7 @@ class Article extends Article_parent {
     {
         $price = parent::getBasePrice($amount);
         $price += $this->getAdditionalVariantAmountPrice($amount);
+        $price += $this->getAdditionalVariantHandlingFees($amount);
         return $price;
     }
 
@@ -20,6 +21,31 @@ class Article extends Article_parent {
             }
         }
         return $result;
+    }
+
+    public function getAdditionalVariantHandlingFees () {
+        $fees = \OxidEsales\Eshop\Core\Registry::getConfig()->getShopConfVar('aAdditionalVariantHandlingFees', null, 'module:agadditionalvariantpricescales');
+        $fee = 0;
+        if (count($fees)) {
+            $varNames = explode('|', $this->oxarticles__oxvarselect->value);
+            foreach ($varNames as $varName) {
+                if (isset($fees[trim($varName)])) {
+                    $fee += $fees[trim($varName)];
+                }
+            }
+        }
+        return $fee;
+    }
+
+    public function getAdditionalVariantSetupFees () {
+        if ($this->oxarticles__oxvarselect->value) {
+            $excludedNames = \OxidEsales\Eshop\Core\Registry::getConfig()->getShopConfVar('aExcludeSetupFees', null, 'module:agadditionalvariantpricescales');
+            $varNames = array_map('trim', explode('|', $this->oxarticles__oxvarselect->value));
+            if (count(array_intersect($excludedNames, $varNames))) {
+                return 0;
+            }
+        }
+        return $this->oxarticles__agsetupfees->value;
     }
 
     public function getAdditionalVariantAmountPrice ($amount) {
