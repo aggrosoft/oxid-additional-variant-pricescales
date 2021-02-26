@@ -1,6 +1,6 @@
 {
   "name": "oxid-agadditionalvariantpricescales",
-  "version": "1.0.1-alpha.4",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "release": "dotenv release-it",

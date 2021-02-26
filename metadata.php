@@ -10,7 +10,7 @@ $aModule = array(
         'en' => 'Add additional price scales for certain variants'
     ],
     'thumbnail'    => '',
-    'version'      => '1.0.1-alpha.4',
+    'version'      => '1.0.1',
     'author'       => 'Aggrosoft GmbH',
     'extend'      => [
         \OxidEsales\Eshop\Application\Model\Article::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\Article::class,
