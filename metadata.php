@@ -15,7 +15,8 @@ $aModule = array(
     'extend'      => [
         \OxidEsales\Eshop\Application\Model\Article::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\Article::class,
         \OxidEsales\Eshop\Application\Model\BasketItem::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Model\BasketItem::class,
-        \OxidEsales\Eshop\Core\ViewConfig::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Core\ViewConfig::class
+        \OxidEsales\Eshop\Core\ViewConfig::class => \Aggrosoft\AdditionalVariantPriceScales\Application\Core\ViewConfig::class,
+        'ajaxprice' => \Aggrosoft\AdditionalVariantPriceScales\Application\Controller\AjkaxPrice::class
     ],
     'settings' => [
         ['group' => 'agadditionalvariantpricescales_main', 'name' => 'aAdditionalVariantPriceScales','type' => 'aarr',   'value' => ''],

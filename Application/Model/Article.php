@@ -12,6 +12,10 @@ class Article extends Article_parent {
         return $price;
     }
 
+    public function getRawBasePrice ($amount = 1) {
+        return parent::getBasePrice($amount);
+    }
+
     public function getAdditionalVariantPriceScales () {
         $result = [];
         $scales = \OxidEsales\Eshop\Core\Registry::getConfig()->getShopConfVar('aAdditionalVariantPriceScales', null, 'module:agadditionalvariantpricescales');
