@@ -8,7 +8,7 @@ class Article extends Article_parent {
     {
         $price = parent::getBasePrice($amount);
         $price += $this->getAdditionalVariantAmountPrice($amount);
-        $price += $this->getAdditionalVariantHandlingFees($amount);
+        $price += $this->getAdditionalVariantSetupFees();
         return $price;
     }
 

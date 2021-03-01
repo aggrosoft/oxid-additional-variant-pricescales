@@ -11,7 +11,7 @@ class BasketItem extends BasketItem_parent {
         $fee = 0;
 
         if ($article && $article->oxarticles__oxvarselect->value) {
-            $fee = $article->getAdditionalVariantSetupFees();
+            $fee = $article->getAdditionalVariantHandlingFees();
         }
 
         $this->_oUnitPrice->add($fee / $this->getAmount());
