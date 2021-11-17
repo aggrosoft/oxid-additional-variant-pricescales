@@ -48,6 +48,8 @@ class Article extends Article_parent {
             if (count(array_intersect($excludedNames, $varNames))) {
                 return 0;
             }
+        } else {
+            return 0;
         }
         return $this->oxarticles__agsetupfees->value;
     }
